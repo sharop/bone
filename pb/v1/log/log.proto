@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+package log.v1;
+
+option go_package = "github.com/nomad/pb/log_v1";
+
+message GetServersRequest{}
+
+message GetServersResponse{
+  repeated Server servers = 1;
+}
+
+message Server{
+  string id =1;
+  string rpc_addr = 2;
+  bool is_leader = 3;
+}
+
+
+// -- CLIENT --- Request --> SERVER
+// -- CLIENT <-- Respond --- SERVER
+service Log{
+  //Unary call
+  rpc Produce(ProduceRequest) returns (ProduceResponse){};
+  //Unary call
+  rpc Consume(ConsumeRequest) returns (ConsumeResponse){};
+  // Streaming server
+  rpc ConsumeStream(ConsumeRequest) returns (stream ConsumeResponse){};
+  // Streaming bidirectional
+  rpc ProduceStream(stream ProduceRequest) returns (stream ProduceResponse) {};
+  // Unary call
+  rpc GetServers(GetServersRequest) returns (GetServersResponse) {};
+}
+
+
+message ProduceRequest {
+  Record record = 1;
+}
+
+message ProduceResponse {
+  string key = 1;
+}
+
+message ConsumeRequest {
+  string key = 1;
+}
+
+message ConsumeResponse{
+  Record record = 2;
+}
+
+message Record{
+  string key = 1;
+  string value = 2;
+}
+
+
+message ItemList{
+  repeated Item items = 1;
+
+}
+
+message Connections{
+  string ID = 1;
+  string Path = 2;
+}
+
+message Item{
+  string ID = 1;
+  string path = 2;
+  enum Level{
+    CORE = 0;
+    ENGINE = 1;
+    SERVICES = 2;
+    RESOURCES = 3;
+  }
+  Level level = 3;
+  enum Resource{
+    SOURCE = 0;
+    SPACE = 1;
+    ASSET = 2;
+  }
+  Resource type = 4;
+  string key = 5;
+  string value = 6;
+  int64 created = 7;
+  int64 modified = 8;
+  uint64 version = 9;
+  bytes meta = 10;
+  bytes user_meta = 11;
+}
+
+
+
+
