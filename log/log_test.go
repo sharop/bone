@@ -2,13 +2,13 @@ package log
 
 import (
 	"github.com/google/uuid"
-	badger "github.com/sharop/bone/store"
+	badger "github.com/sharop/nopaldb/store"
 	"io/ioutil"
 	"os"
 	"testing"
 	"time"
 
-	api "github.com/sharop/bone/pb/v1/log"
+	api "github.com/sharop/nopaldb/pb/v1/log"
 	"github.com/stretchr/testify/require"
 )
 

@@ -1,7 +1,7 @@
 package log
 
 import (
-	badger "github.com/sharop/bone/store"
+	badger "github.com/sharop/nopaldb/store"
 	"sync"
 )
 

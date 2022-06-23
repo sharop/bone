@@ -1,7 +1,7 @@
 package store_test
 
 import (
-	badger "github.com/sharop/bone/store"
+	badger "github.com/sharop/nopaldb/store"
 	"github.com/stretchr/testify/require"
 	"io/ioutil"
 	"log"

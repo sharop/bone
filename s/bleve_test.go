@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"github.com/blevesearch/bleve/v2"
-	"github.com/sharop/bone/s"
+	"github.com/sharop/nopaldb/s"
 	"github.com/stretchr/testify/require"
 	"io/ioutil"
 	"log"

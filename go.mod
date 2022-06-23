@@ -1,4 +1,4 @@
-module github.com/sharop/bone
+module github.com/sharop/nopaldb
 
 go 1.17
 

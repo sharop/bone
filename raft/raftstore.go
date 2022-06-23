@@ -4,7 +4,7 @@ import (
 	"errors"
 	"github.com/dgraph-io/badger/v3"
 	"github.com/hashicorp/raft"
-	"github.com/sharop/bone/common"
+	"github.com/sharop/nopaldb/common"
 	"time"
 )
 

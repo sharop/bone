@@ -3,7 +3,7 @@ package store
 import (
 	"encoding/binary"
 	"github.com/pkg/errors"
-	"github.com/sharop/bone/common"
+	"github.com/sharop/nopaldb/common"
 	"math"
 	"strings"
 )

@@ -3,7 +3,7 @@ package log
 import (
 	"bytes"
 	"fmt"
-	badger "github.com/sharop/bone/raft"
+	badger "github.com/sharop/nopaldb/raft"
 	"go.uber.org/zap"
 	"golang.org/x/net/context"
 	"io"
@@ -19,7 +19,7 @@ import (
 
 	"github.com/hashicorp/raft"
 
-	api "github.com/sharop/bone/pb/v1/log"
+	api "github.com/sharop/nopaldb/pb/v1/log"
 )
 
 // Implemented using reference of https://github.com/BBVA/raft-badger/blob/master/badger_store.go

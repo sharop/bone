@@ -2,8 +2,8 @@ package log
 
 import (
 	"github.com/google/uuid"
-	api "github.com/sharop/bone/pb/v1/log"
-	badger "github.com/sharop/bone/store"
+	api "github.com/sharop/nopaldb/pb/v1/log"
+	badger "github.com/sharop/nopaldb/store"
 	"log"
 	"os"
 	"sync"

@@ -1,6 +1,6 @@
 package log
 
-import store2 "github.com/sharop/bone/store"
+import store2 "github.com/sharop/nopaldb/store"
 
 type OTx struct {
 	store    *store2.Database
